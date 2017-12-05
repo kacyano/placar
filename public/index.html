@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+
+    <title>Placar On Cloud</title>
+</head>
+<body ng-controller="MainController as vm">
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <a class="navbar-brand" href="#">Placar On Cloud</a>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron col-md-10" style="margin: 0 auto;">
+            <p>
+                <input class="form-control" type="text" ng-model="vm.registro.nome" placeholder="Adicione os participantes do jogo...">
+            </p>
+            <button class="btn btn-primary btn-block" ng-click="vm.adicionar(vm.registro)">Adicionar</button>        
+            <br/>                
+            <h3>Lista de jogadores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30px;">#</th>
+                        <th style="width: 50px;"></th>
+                        <th style="width: 150px;">Nome</th>
+                        <th style="width: 70px;">Pontos</th>
+                        <th style="width: 50px;">+</th>
+                        <th style="width: 50px;">-</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in vm.registros">
+                    <td>{{$index + 1}}</td>
+                    <td><button ng-click="vm.remover($index)"><i class="material-icons">delete_forever</i></button></td>
+                    <td>{{row.nome}}</td>
+                    <td>{{row.points}}</td>
+                    <td><button ng-click="vm.addPoints($index)"><i class="material-icons">exposure_plus_1</i></button></td>
+                    <td><button ng-click="vm.subtPoints($index)"><i class="material-icons">exposure_neg_1</i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
+    <script src="vendor/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>    
+    <script src="vendor/bootstrap/bootstrap.min.js"></script>
+
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/angular-route.min.js"></script>
+    <script src="vendor/angular/angular-locale_pt-br.js"></script>
+    <script src="vendor/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <script src="js/main.controller.js"></script>
+</body>
+</html>

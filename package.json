@@ -1,0 +1,27 @@
+{
+  "name": "placar",
+  "version": "1.0.0",
+  "description": "Placar On Cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kacyano/placar.git"
+  },
+  "keywords": [
+    "placar",
+    "games",
+    "registro"
+  ],
+  "author": "kacyano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kacyano/placar/issues"
+  },
+  "homepage": "https://github.com/kacyano/placar#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

@@ -1,9 +1,13 @@
-var http = require('http')
 var express = require('express')
 var app = express()
 
 app.use(express.static('./public'))
+app.set('port', (process.env.PORT || 7000));
 
-http.createServer(app).listen(7000, function() {
-  console.log('Servidor iniciado...')
-})
+app.get('/', function(request, response) {
+    response.render('index.html');
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
